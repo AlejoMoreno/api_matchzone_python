@@ -4,7 +4,7 @@ from .api import ContractViewSet, RoleViewSet, UsersViewSet, CompanyViewSet, Ser
 from .api import CompanyAdressViewSet, CompanyPhonesViewSet, DocumentsUserViewSet, CompanyPicturesViewSet, CompanyServicesViewSet, ReservationChatViewSet
 from .api import CompanyAdressHoursViewSet, ReservationPaymentViewSet, ReservationChatPrivateViewSet, ReservationQualificationViewSet
 from django.urls import path, include
-from .views import RegistrationView
+from .views import LoginView, RegistrationView
 from rest_framework.authtoken.views import obtain_auth_token
 
 router = routers.DefaultRouter()
@@ -30,6 +30,7 @@ router.register('reservationQualification', ReservationQualificationViewSet, 'Re
 
 urlpatterns = [
      path('api/v-1/register/', RegistrationView.as_view(), name='user-registration'),
+     path('api/v-1/login/', LoginView.as_view(), name='user-login'),
     path('api/v-1/token/', obtain_auth_token, name='api_token_auth'),
     path('api/v-1/admin/', include(router.urls)),
     path('api/v-1/auth/', admin.site.urls),

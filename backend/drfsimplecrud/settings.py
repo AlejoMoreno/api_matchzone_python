@@ -82,26 +82,23 @@ WSGI_APPLICATION = 'drfsimplecrud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.oracle',
-#        'NAME': '172.16.10.2:1522/BImision',
-#        'USER': 'stagging_brechas',
-#        'PASSWORD': 'brstg2023',
-#        'TEST': {
-#            'USER': 'default_test',
-#            'TBLSPACE': 'default_test_tbls',
-#            'TBLSPACE_TMP': 'default_test_tbls_tmp',
-#        },
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
+
+DATABASES = {
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'matchzone_admin',
+        'USER': 'admin',
+        'PASSWORD': 'A1030570356mc+-',
+        'HOST':'database-administracion.cwnzvzv3zad7.us-east-1.rds.amazonaws.com',
+        'PORT':'3306',
+    }
+}
 
 
 # Password validation
